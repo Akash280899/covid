@@ -1,0 +1,13 @@
+<div>
+  <!-- <app-all [countrydata] = "countrydata"></app-all> -->
+
+  Country Name or Code: 
+  <input #commonName name="commonName" value="" style="background-color: transparent;color: black;" placeholder="India or IN">
+   <p> <button (click)="assignName(commonName.value)" style="color: red;">Submit</button> </p>
+    
+  
+  <app-summary [globaldata]="globaldata"></app-summary>  
+  
+  <app-country [singledata] = "singledata"></app-country>
+  
+</div>
