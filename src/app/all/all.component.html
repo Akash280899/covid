@@ -1,12 +1,25 @@
-<table border="1">
-    <tr>
-        <th>Country Name</th>
-        <th>Country Code</th>
-    </tr>
-    
-        <tr *ngFor = "let data of countrydata">
-            <td>{{data.Country}}</td>
-            <td>{{data.CountryCode}}</td>
+<div style="clear: both;"></div>
+<div>
+    <table border="1" style="float:left">
+        <tr>
+            <th>Country Name</th>
+            <th>Country Code</th>
         </tr>
-   
-</table>
+        
+            <tr *ngFor = "let data of tempdata">
+                <td>{{data.Country}}</td>
+                <td>{{data.CountryCode}}</td>
+            </tr>
+    </table>
+    <table border="1" style="float:left">
+        <tr>
+            <th>Country Name</th>
+            <th>Country Code</th>
+        </tr>
+        
+            <tr *ngFor = "let datas of maindata">
+                <td>{{datas.Country}}</td>
+                <td>{{datas.CountryCode}}</td>
+            </tr>
+    </table>
+    </div>
