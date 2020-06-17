@@ -1,13 +1,29 @@
-<div>
-  <!-- <app-all [countrydata] = "countrydata"></app-all> -->
+<style>
+  h1 {
+    color: black;
+    background-color: gray;
+    margin-top: -10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 2px white;
+  }
+</style>
+<header>
+  <h1 style="text-align: center;">
+    COVID-19 REPORT
+  </h1>
+</header>
 
-  Country Name or Code: 
+<div>
+<label>Country Name or Code:</label>  
   <input #commonName name="commonName" value="" style="background-color: transparent;color: black;" placeholder="India or IN">
-   <p> <button (click)="assignName(commonName.value)" style="color: red;">Submit</button> </p>
-    
+  (*must be case-sensitive)
+   <button (click)="assignName(commonName.value)" style="color: red;margin-left: 50px;">Submit</button>
+</div>
+<div>
   
   <app-summary [globaldata]="globaldata"></app-summary>  
-  
   <app-country [singledata] = "singledata"></app-country>
-  
+  <app-all [tempdata] = "tempdata" [maindata] = "maindata"></app-all>
+ 
 </div>
+  
