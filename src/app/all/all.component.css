@@ -1,0 +1,16 @@
+table {
+    background-color:rgb(248,67,67);
+    margin-top: 10px;
+    
+}
+th {
+    background: rgb(153, 153, 153);
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    text-shadow: 1px 1px 1px white;
+}
+td {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
