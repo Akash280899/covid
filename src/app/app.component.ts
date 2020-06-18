@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { NgIf } from '@angular/common';
 
 
 @Component({
@@ -15,11 +15,12 @@ export class AppComponent {
   tempdata: any = [];
   maindata: any =[];
   common: string;
+  alert: boolean = true;
  
   assignName (commonName: string) {
-    //console.log("mainsingle" + this.singledata);
+    
     this.common = commonName;
-    console.log("value received: " + commonName);
+    
     this.common = this.common[0].toUpperCase() + this.common.slice(1);
     console.log("value changed: " + this.common);
     this.http
@@ -34,23 +35,20 @@ export class AppComponent {
         
       }
 
-      console.log("commonfunc" +this.common);
-      this.countrydata.forEach(countrylist => {
-        
+      //this.countrydata.forEach(countrylist => {
+        for (let countrylist of this.countrydata) {
         if (countrylist.CountryCode == this.common || countrylist.Country == this.common) {
-          console.log("inside" + this.common);
           this.singledata = countrylist;
-          console.log("singledata" + this.singledata); 
+          this.alert = true;
+          break;
          }
-        else {
-          //this.alertService.error("Entetr");
-          //err("enter");
-        }
-      });
+         else {
+           this.alert = false;
+         }
+      };
+      
     });
   }
-
-  
   
   
   constructor(public http: HttpClient) {
@@ -64,17 +62,14 @@ export class AppComponent {
 
       for (let i = 0;i<=93;i++) {
         this.tempdata.push(this.countrydata[i]);
-        //console.log("tempdata" + this.tempdata);
+        
       }
       for (let i = 94;i < 186;i++) {
         this.maindata.push(this.countrydata[i]);
-        //console.log("maindata" + this.maindata);
+        
       }
     });
     
   }
-  
-  
-  
   title = 'covid';
 }
